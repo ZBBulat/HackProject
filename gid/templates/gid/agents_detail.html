@@ -1,0 +1,20 @@
+{% extends 'gid/base.html' %}
+{% block content %}
+
+<div style="padding: 120px 0px">
+
+<div class="row">
+			<div class="col-md-12 , col-xs-12">
+				<div style="padding:20px;margin:10px;" class="card text-center">
+				  <div class="card-body">
+					<h4 class="card-title">{{ port.title }}</h4>
+                      <div class="post">
+					<p class="card-text"><p>{{ port.text|linebreaksbr }}</p> </p>
+                      </div>
+				  </div>
+				</div>
+			</div>
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'gid/base.html' %}
+
+{% block content %}
+	<div style="padding-top:120px;">
+
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 , col-xs-12">
+				<center><a href="/tyrs/new/" class="btn btn-primary">Добавить агентство</a></center>
+			</div>
+		</div>
+        {% for port in ports %}
+		<div class="row">
+			<div class="col-md-12 , col-xs-12">
+				<div style="padding:20px;margin:10px;box-shadow: inset 0px 0px 8px 4px rgba(0, 0, 0, 0.53);border:0;" class="card text-center">
+				  <div class="card-body">
+					<h4 class="card-title"><a href="{% url 'tyr_detail' pk=port.pk %}">{{ port.title }}</a></h4>
+                      <div class="post">
+					<p class="card-text"><p>{{ port.text|linebreaksbr }}</p> </p>
+                      </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+{% endblock %}
