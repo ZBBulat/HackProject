@@ -1,0 +1,31 @@
+{% extends "gid/base.html" %}
+
+{% block content %}
+    <div style="padding-top:120px;">
+
+	</div>
+    <center>
+    <h1 style="color:white">Авторизация:</h1>
+    <br><br>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <form style="color:white;" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+        <br>
+        <input class="btn btn-primary" type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    </center>
+{% endblock %}

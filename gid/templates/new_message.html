@@ -1,9 +1,16 @@
 {% extends 'gid/base.html' %}
 
 {% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
+
+    <div style="padding: 60px 0px">
+
+    </div>
+    <center>
+    <h1 style="color:white;">Новый комментарий</h1>
+    <br>
+    <form style="color:white;" method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-primary">Save</button>
     </form>
+    </center>
 {% endblock %}

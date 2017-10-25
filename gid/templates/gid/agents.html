@@ -11,12 +11,13 @@
 				<center><a href="/tyrs/new/" class="btn btn-primary">Добавить агентство</a></center>
 			</div>
 		</div>
+    <br>
         {% for port in ports %}
 		<div class="row">
 			<div class="col-md-12 , col-xs-12">
-				<div style="padding:20px;margin:10px;box-shadow: inset 0px 0px 8px 4px rgba(0, 0, 0, 0.53);border:0;" class="card text-center">
-				  <div class="card-body">
-					<h4 class="card-title"><a href="{% url 'tyr_detail' pk=port.pk %}">{{ port.title }}</a></h4>
+				<div style="padding:12px;margin:20px;box-shadow: inset 0px 0px 8px 4px rgba(0, 0, 0, 0.4);border:0;border-radius: 12px;" class="card text-center">
+				  <div style="background-image: url(/static/assets/img/wow3.png);" class="card-body">
+					<h2 class="card-title"><a href="{% url 'tyr_detail' pk=port.pk %}">{{ port.title }}</a></h2>
                       <div class="post">
 					<p class="card-text"><p>{{ port.text|linebreaksbr }}</p> </p>
                       </div>
@@ -25,5 +26,15 @@
 			</div>
 		</div>
         {% endfor %}
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            {{ post.title }}
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 	</div>
 {% endblock %}

@@ -1,13 +1,13 @@
 from django import forms
 
-from gid.models import Post , Tyr
+from gid.models import Ot, Tyr
 
-
-class PostForm(forms.ModelForm):
+class OtForm(forms.ModelForm):
 
     class Meta:
-        model = Post
-        fields = ('title', 'text',)
+        model = Ot
+        fields = ('author', 'text',)
+
 
 class TyrForm(forms.ModelForm):
 

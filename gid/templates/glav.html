@@ -14,6 +14,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/static/assets/css/styles.css">
+    <link rel="stylesheet" href="/static/assets/css/animate.css">
 </head>
 
 <body>
@@ -25,10 +26,15 @@
 	<header>
 		<h2><a href="#">Tourist guide</a></h2>
 		<nav>
-			<li><a href="#">Главная</a></li>
+			<li><a href="/">Главная</a></li>
 			<li><a href="/tyrs/">Агентства</a></li>
-			<li><a href="#">Картинки</a></li>
-			<li><a href="#">Контакты</a></li>
+			<li><a href="/images/">Картинки</a></li>
+			<li><a href="/about/">Контакты</a></li>
+            {% if not user.is_authenticated %}
+            <li><a href="/accounts/login/">Войти</a></li>
+             {% else %}
+            <li><a href="/accounts/logout/">Выйти</a><li>
+            {% endif %}
 		</nav>
 	</header>
 
@@ -47,14 +53,14 @@
 	<section class="our-work">
 		<h3 class="title">Наши услуги</h3>
 		<p>Пользователи могут создавать форму своего туристического агентства, которое позже будет подтверждено администрацией.</p>
-		<a href="#" class="btn btn-primary">Перейти</a>
+		<a href="/tyrs/" class="btn btn-primary">Перейти</a>
 		<hr>
 		<center><h3 class="title">Места отдыха</h3></center>
 		<ul class="grid">
-			<li class="small" style="background-image: url(/static/assets/img/1.jpg);"></li>
-			<li class="large" style="background-image: url(/static/assets/img/2.jpg);"></li>
-			<li class="large" style="background-image: url(/static/assets/img/3.jpg);"></li>
-			<li class="small" style="background-image: url(/static/assets/img/4.jpg);"></li>
+			<li class="small , animated" data-effect="pulse" style="background-image: url(/static/assets/img/1.jpg);"></li>
+			<li class="large , animated" data-effect="pulse" style="background-image: url(/static/assets/img/2.jpg);"></li>
+			<li class="large , animated" data-effect="pulse" style="background-image: url(/static/assets/img/3.jpg);"></li>
+			<li class="small , animated" data-effect="pulse" style="background-image: url(/static/assets/img/4.jpg);"></li>
 		</ul>
 		<a href="/tyrs/" class="btn btn-primary">Туристические агентства</a>
 	</section>
@@ -131,6 +137,12 @@
 		<p>Сделано с помощью <a href="http://tutorialzine.com/" target="_blank">Python Django</a></p>
 		<p>Author by: Artemachq , ZBulat , Elina</p>
 	</footer>
+
+    <script src="/static/assets/js/wow.min.js"></script>
+
+	<script>
+		new WOW().init();
+	</script>
 
 </body>
 

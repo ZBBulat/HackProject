@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from gid.models import Post, Tyr
+from gid.models import Ot, Tyr
 
-admin.site.register(Post)
+admin.site.register(Ot)
 admin.site.register(Tyr)
 # Register your models here.

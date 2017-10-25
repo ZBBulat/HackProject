@@ -1,8 +1,10 @@
 {% extends 'gid/base.html' %}
 {% block content %}
 
-<div style="padding: 120px 0px">
+<div style="padding: 60px 0px">
 
+</div>
+<div class="container">
 <div class="row">
 			<div class="col-md-12 , col-xs-12">
 				<div style="padding:20px;margin:10px;" class="card text-center">
@@ -15,6 +17,23 @@
 				</div>
 			</div>
 </div>
-
 </div>
+<center>
+<br>
+<h1 style="color:white;">Комментарии</h1>
+<br>
+    <a class="btn btn-primary" href="{% url 'ot_new' pk=port.pk %}">Add comment</a>
+    {% for ot in port.ots.all %}
+    <div style="color:white" class="comment">
+        <div class="date">
+            {{ post.created_date }}
+        </div>
+
+        <strong>{{ ot.author }}</strong>
+        <p>{{ ot.text|linebreaks }}</p>
+    </div>
+    {% empty %}
+    <p style="color:white;">No comments here yet :(</p>
+    {% endfor %}
+</center>
 {% endblock %}

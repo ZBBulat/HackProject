@@ -13,6 +13,12 @@ html{
 	color: #555;
 }
 
+@font-face{
+	font-family: StudioScriptC , Exo;
+    src: url(font/9538.otf);
+	src: url(font/9844.otf);
+}
+
 ul, nav{
 	list-style: none;
 }
@@ -332,7 +338,7 @@ header nav li:last-child{
 --------------------*/
 
 .reviews{
-	background:url(/static/assets/img/pattern.png)repeat;
+	background:url(../assets/img/pattern.png)repeat;
 }
 
 .reviews .quote{
@@ -400,6 +406,33 @@ header nav li:last-child{
 	padding: 18px 42px;
 }
 
+.images img{margin:20px;border:2px solid white;}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+	color:rgba(255,255,255,0.8);
+}
+
+.section-table{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.section-row{
+	display: table-row;
+}
+.section-cell{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.section-center{
+	max-width: 550px;
+	display: inline-block;
+}
+
 
 @media (max-width: 800px){
 
@@ -463,7 +496,6 @@ footer p a{
 	}
 
 }
-
 
 /* -- Demo ads -- */
 
